@@ -8,6 +8,7 @@ import {APP_BASE_HREF, CommonModule} from '@angular/common';
 import startProxy from './server.js';
 import axios from 'axios';
 import {AttackService} from '@services/attack/attack.service';
+import {AttackModule} from '@services/attack/attack.module';
 
 describe('AttakService med riktigt request', () => {
   let service: AppService;
@@ -27,7 +28,7 @@ describe('AttakService med riktigt request', () => {
         { provide: HttpClient, useClass: HttpClient}
       ],
       imports: [
-        CommonModule, HttpClientModule
+        CommonModule, HttpClientModule, AttackModule
       ]
     });
 
